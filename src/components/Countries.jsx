@@ -3,23 +3,46 @@ import axios from "axios";
 import { useState } from "react";
 
 const Countries = () => {
-  const [data, setData] = useState();
+  //----------------------------Fetch simple---------------------------------------------
+  // async function FetchApi() {
+  //   const response = await fetch("https://restcountries.com/v3.1/all");
+  //   const pays = await response.json();
+  //   console.log(pays.name);
+  // }
+  // FetchApi()
+  //---------------------------Fetch avec UseState---------------------------------------
+  const [country, setCountry] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://restcountries.com/v3.1/all")
-      .then((response) => setData(response.data));
+    async function fetchCountries() {
+      try {
+        const response = await fetch("https://restcountries.com/v3.1/all");
+        if (response.ok) {
+          const data = await response.json();
+          setCountry(data);
+        } else {
+          console.error("Problème durant le fetch de l'API");
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    fetchCountries();
   }, []);
 
+  //---------------------------Fetch avec Axios---------------------------------------
   return (
-    <>
-      <h1>COUNTRIES</h1>
-      <ul>
-        {/* {data.map((country) => (
-      <li key={country.name.commons}>{country.translate.fra.commons}</li>
-    ))} */}
-      </ul>
-    </>
+    <div>
+      <h1>PAGE COUNTRY</h1>
+      <div className="cardContainer">
+        {country.map((country) => (
+          <div key={country.ccn3}>
+            <img src={country.flags.svg} alt={country.name.common} />
+            <h2>{country.capital}</h2>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 
