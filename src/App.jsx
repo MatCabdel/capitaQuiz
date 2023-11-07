@@ -1,9 +1,12 @@
 import "./App.css";
+import Countries from "./components/Countries";
+import Header from "./components/Header";
 
 function App() {
   return (
     <>
-    <Countries />
+      <Header />
+      <Countries />
     </>
   );
 }
