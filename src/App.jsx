@@ -1,16 +1,11 @@
-import { useState } from 'react'
-import Countries from './components/Countries'
-
-
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
     <Countries />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
