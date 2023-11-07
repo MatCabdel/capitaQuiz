@@ -1,12 +1,15 @@
 import React from "react";
 import "./App.css";
 import CountryCard from "./components/CountryCard";
+import Countries from "./components/Countries";
+import Header from "./components/Header";
 
 function App() {
   return (
     <>
-      <h1>HelloWorld</h1>
+      <Header />
       <CountryCard />
+      <Countries />
     </>
   );
 }

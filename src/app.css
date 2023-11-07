@@ -4,6 +4,13 @@
   box-sizing: border-box;
   text-decoration: none;
 }
+body {
+  background-color: rgb(34, 24, 72);
+}
+.Logo {
+  margin-top: 30px;
+  text-align: center;
+}
 
 .container {
   width: 100%;
@@ -86,7 +93,11 @@ body {
   display: block;
   border-radius: 6px;
   backface-visibility: hidden;
-  background: linear-gradient(40deg, rgba(67, 138, 243, 0.7), rgba(255, 242, 166, 0.7));
+  background: linear-gradient(
+    40deg,
+    rgba(67, 138, 243, 0.7),
+    rgba(255, 242, 166, 0.7)
+  );
 }
 .front .inner {
   grid-template-rows: 5fr 1fr 1fr 2fr 1fr;
@@ -146,9 +157,8 @@ body {
   font-size: 1.2em;
 }
 .back .info i:before {
-  background: linear-gradient(40deg, blue, rgb(67, 138, 243));
+  background: linear-gradient(40deg, blue, rgb(86, 49, 196));
   -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
 }
 .back .info .icon {
   margin-left: 0.3em;
@@ -244,4 +254,4 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: blue;
-}/*# sourceMappingURL=app.css.map */
+} /*# sourceMappingURL=app.css.map */
