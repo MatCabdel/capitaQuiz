@@ -12,7 +12,7 @@ function App() {
       <main>
         <Outlet/>
       </main>
-      <footer style={{color : "white"}}>JE SUIS LE FOOTER</footer>
+      <footer style={{color : "white", paddingTop: "20px"}}>JE SUIS LE FOOTER</footer>
     </ div>
   );
 }

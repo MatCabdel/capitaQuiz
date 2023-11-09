@@ -51,8 +51,9 @@ const CountryCard = ({ country }) => {
                   </p>
                   <p>Lien Google Maps : {country.maps.googleMaps}</p>
                   <br />
-                  <p>
-                    {/* Merci CHATGPT bellow */}
+                  {/* Merci CHATGPT bellow */}
+                  {/* <p>
+                    
                     Monnaies :{" "}
                     {Object.values(country.currencies).map(
                       (currency, index) => (
@@ -64,7 +65,7 @@ const CountryCard = ({ country }) => {
                         </span>
                       )
                     )}
-                  </p>
+                  </p> */}
                   <br />
                 </div>
                 <div className="location">
