@@ -5,18 +5,45 @@
   text-decoration: none;
 }
 .container {
+  max-width: 1280px;
   width: 100%;
   padding: 0 12px;
   margin: 0 auto;
 }
 
+.cardContainer{
+  margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    color: white;
+}
+.country{
+  width: 18vw;
+  padding: 0.2vw;
+  width: 200px
+}
+.countryTitle {
+  padding-right: 20px;
+    font-size: 15px;
+    width: 18vw;
+}
+body {
+  background-color: rgb(34, 24, 72);
+}
+.Logo {
+  margin-top: 30px;
+  text-align: center;
+}
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -44,7 +71,7 @@ body {
 }
 
 .more {
-  display: none;
+  // display: none;
 
   &:checked ~ .content {
     transform: rotateY(180deg);
@@ -148,10 +175,9 @@ body {
     }
     i {
       &:before {
-        background: linear-gradient(40deg, blue, rgb(67, 138, 243));
+        background: linear-gradient(40deg, blue, rgb(67, 138, 24));
 
         -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
       }
       font-size: 1.2em;
     }
@@ -180,7 +206,7 @@ body {
   }
 
   .location,
-  .price {
+  .flag {
     font-weight: 600;
     color: blue;
     grid-row: 1;
@@ -192,7 +218,8 @@ body {
     justify-self: left;
   }
 
-  .price {
+  .flag {
+    font-size: 2em;
     grid-column: 3/-1;
     justify-self: right;
   }

@@ -1,7 +1,14 @@
 import React from "react";
 
-
-const CountryCard = () => {
+const CountryCard = ({ country }) => {
+  let currenciesName = "lol";
+  let currenciesSymbol = null;
+  for (let currency in country.currencies) {
+    for (let curr in currency) {
+      console.log(curr.name);
+    }
+  }
+  console.log(country.currencies);
   return (
     <div>
       <div className="wrapper">
@@ -16,11 +23,11 @@ const CountryCard = () => {
             <div
               className="front"
               style={{
-                backgroundImage: `./src/Assets/angleterre.png')`,
+                backgroundImage: `url(${country.flags.svg})`,
               }}
             >
               <div className="inner">
-                <h2>Royaume-Unis</h2>
+                <h2>{country.translations.fra.official}</h2>
                 <div className="rating">
                   <i className="fas fa-star"></i>
                   <i className="fas fa-star"></i>
@@ -29,55 +36,41 @@ const CountryCard = () => {
                   <i className="far fa-star"></i>
                 </div>
                 <label htmlFor="card1" className="button" aria-hidden="true">
-                  Voir la capitale
+                  Informations
                 </label>
               </div>
             </div>
             <div className="back">
               <div className="inner">
-                <div className="info">
-                  <span>5</span>
-                  <div className="icon">
-                    <i className="fas fa-users"></i>
-                    <span>people</span>
-                  </div>
-                </div>
-                <div className="info">
-                  <span>4</span>
-                  <div className="icon">
-                    <i className="fas fa-door-open"></i>
-                    <span>rooms</span>
-                  </div>
-                </div>
-                <div className="info">
-                  <span>3</span>
-                  <div className="icon">
-                    <i className="fas fa-bed"></i>
-                    <span>beds</span>
-                  </div>
-                </div>
-                <div className="info">
-                  <span>1</span>
-                  <div className="icon">
-                    <i className="fas fa-bath"></i>
-                    <span>bath</span>
-                  </div>
-                </div>
                 <div className="description">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Vitae, accusamus.
+                    Nom officiel : "Royaume-Uni de Grande-Bretagne et d'Irlande
+                    du Nord",
+                    <br />
+                    Commun : "Royaume-Uni"
                   </p>
+                  <p>Lien Google Maps : {country.maps.googleMaps}</p>
+                  <br />
                   <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Voluptates earum nostrum ipsam ullam, reiciendis nam
-                    consectetur? Doloribus voluptate architecto possimus
-                    perferendis tenetur nemo amet temporibus, enim soluta nam,
-                    debitis.
+                    {/* Merci CHATGPT bellow */}
+                    Monnaies :{" "}
+                    {Object.values(country.currencies).map(
+                      (currency, index) => (
+                        <span key={index}>
+                          {currency.name} ({currency.symbol})
+                          {index <
+                            Object.values(country.currencies).length - 1 &&
+                            ", "}
+                        </span>
+                      )
+                    )}
                   </p>
+                  <br />
                 </div>
-                <div className="location">Warsaw, Poland</div>
-                <div className="price">38€ / day</div>
+                <div className="location">
+                  {country.capital}, {country.translations.fra.official}
+                </div>
+                <div className="flag">{country.flag}</div>
                 <label
                   htmlFor="card1"
                   className="button return"

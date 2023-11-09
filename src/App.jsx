@@ -1,15 +1,19 @@
 import React from "react";
 import "./App.css";
-import CountryCard from "./components/CountryCard";
-import Countries from "./components/Countries";
 import Header from "./components/Header";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
-    <>
-      <Header />
-      <CountryCard />
-    </>
+    <div>
+      <nav>
+        <Header />
+      </nav>
+      <main>
+        <Outlet/>
+      </main>
+      <footer style={{color : "white"}}>JE SUIS LE FOOTER</footer>
+    </ div>
   );
 }
 
