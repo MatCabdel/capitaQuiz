@@ -18,6 +18,15 @@ body {
   margin: 0 auto;
 }
 
+li {
+  color: white;
+}
+
+img {
+  width: 100px;
+  height: 40px;
+}
+
 * {
   box-sizing: border-box;
 }
