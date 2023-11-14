@@ -12,6 +12,24 @@
   margin: 0 auto;
 }
 
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.next-button {
+  text-align: center;
+  font-size: 16px;
+  border: 3px solid #ccc;
+  border-radius: 20px;
+  width: 200px;
+  margin-top: 20px;
+  color: #ccc;
+  background-color: rgb(34, 24, 72);
+  padding: 10px;
+  margin: 30px 19px;
+}
+
 .cardContainer {
   margin: 0 auto;
   display: flex;
@@ -115,7 +133,7 @@ body {
   display: block;
   border-radius: 6px;
   backface-visibility: hidden;
-  background: linear-gradient(40deg, rgba(67, 138, 243, 0.7), rgba(255, 242, 166, .2));
+  background: linear-gradient(40deg, rgba(67, 138, 243, 0.7), rgba(255, 242, 166, 0.7));
 }
 .front .inner {
   grid-template-rows: 5fr 1fr 1fr 2fr 1fr;

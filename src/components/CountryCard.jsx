@@ -44,28 +44,12 @@ const CountryCard = ({ country }) => {
               <div className="inner">
                 <div className="description">
                   <p>
-                    Nom officiel : "Royaume-Uni de Grande-Bretagne et d'Irlande
-                    du Nord",
+                    Nom officiel : {country.name.common},
                     <br />
-                    Commun : "Royaume-Uni"
+                    Région : {country.region}
                   </p>
                   <p>Lien Google Maps : {country.maps.googleMaps}</p>
                   <br />
-                  {/* Merci CHATGPT bellow */}
-                  {/* <p>
-                    
-                    Monnaies :{" "}
-                    {Object.values(country.currencies).map(
-                      (currency, index) => (
-                        <span key={index}>
-                          {currency.name} ({currency.symbol})
-                          {index <
-                            Object.values(country.currencies).length - 1 &&
-                            ", "}
-                        </span>
-                      )
-                    )}
-                  </p> */}
                   <br />
                 </div>
                 <div className="location">
